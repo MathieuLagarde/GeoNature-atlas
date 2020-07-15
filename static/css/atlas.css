@@ -520,3 +520,8 @@ input.ajax-search {
   display: inline-block;
   text-decoration: none !important;
 }
+
+/*OEB*/
+div.tooltip .tooltip-arrow {
+  display: none;
+}
