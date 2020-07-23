@@ -35,7 +35,9 @@
         <script src="{{url_for('static', filename='lib/leaflet/leaflet-fullscreen/leafletFullScreen.min.js') }}"></script>
         <link rel="stylesheet" href="{{url_for('static', filename='lib/leaflet/leaflet-fullscreen/leafletFullScreen.css') }}" />
 		<!-- fontawesome -->
-        <script src="{{url_for('static', filename='lib/node_modules/@fortawesome/fontawesome-free/js/all.min.js') }}"></script>
+		<!--OEB-->
+        <!--script src="{{url_for('static', filename='lib/node_modules/@fortawesome/fontawesome-free/js/all.min.js') }}"></script-->
+        <link rel="stylesheet" href="{{url_for('static', filename='lib/font-awesome-4.7.0/css/font-awesome.min.css') }}" />
 
         <!-- D3 -->
         <script src="{{url_for('static', filename='lib/d3/d3.min.js') }}"></script>
@@ -270,7 +272,7 @@
                                 {{ 'observations' if taxon.taxonSearch.nb_obs > 1 else 'observation' }}
                             </li>
                             <li>
-                                <i class="fas fa-map-signs font-icon" style="font-size: 30px;"></i>                                <br/>
+                                <i class="fa fa-map-signs font-icon" style="font-size: 30px;"></i>                                <br/>
                                 <b>{{communes|length|pretty}}</b><br/>
                                 {{ 'communes' if communes|length > 1 else 'commune' }}
                             </li>
@@ -581,13 +583,13 @@
 
             </div>
             {% endif %}
-
-            <!--<div class="panel panel-default" id="graphBloc">
-                <h4 class="title-bar title-spaced center strong">Observations par classes d'altitudes</h4>
-                <div id="altiChart"></div>
+            <!--OEB-->
+            <div class="panel panel-default" id="graphBloc">
+                <!--h4 class="title-bar title-spaced center strong">Observations par classes d'altitudes</h4>
+                <div id="altiChart"></div-->
                 <h4 class="title-bar title-spaced center strong">Observations mensuelles</h4>
                 <div id="phenologyChart"></div>
-            </div>-->
+            </div>
         </div>
     </div>
         {% if configuration.AFFICHAGE_FOOTER %}

@@ -21,7 +21,9 @@
         <link rel="stylesheet" href="{{url_for('static', filename='lib/leaflet/leaflet-fullscreen/leafletFullScreen.css') }}" />
 
 		<!-- fontawesome -->
-        <script src="{{url_for('static', filename='lib/node_modules/@fortawesome/fontawesome-free/js/all.min.js') }}"></script>
+		<!--OEB-->
+        <!--script src="{{url_for('static', filename='lib/node_modules/@fortawesome/fontawesome-free/js/all.min.js') }}"></script-->
+        <link rel="stylesheet" href="{{url_for('static', filename='lib/font-awesome-4.7.0/css/font-awesome.min.css') }}" />
 
 		<!-- CSS Application -->
         <link rel="shortcut icon" href="{{ url_for('static', filename='custom/images/favicon.ico') }}">
@@ -48,13 +50,13 @@
 			<!-- Statistiques globales -->
 					<div class="panel panel-default stat-panel">
 						<div class="panel-heading padding-sm ">
-								<strong><h3 class="title-spaced"> <i class="fas fa-chart-line icon-color-title">&nbsp;</i> En quelques chiffres</h3></strong>
+								<strong><h3 class="title-spaced"> <i class="fa fa-chart-line icon-color-title">&nbsp;</i> En quelques chiffres</h3></strong>
 						</div>
 						<div class="panel-body">
 							<div class="row">
 								<div class ="col-lg-4 col-md-4 col-sm-6 col-xs-12 stat-object">
 									<div class="stat-thumbnail border">
-										<i class="fas fa-search font-icon blue"></i>	<input id="hiddenInputTaxonStat" type="hidden" name="cd_ref">
+										<i class="fa fa-search font-icon blue"></i>	<input id="hiddenInputTaxonStat" type="hidden" name="cd_ref">
 											<h1 class="large muted">{{stat.nbTotalObs | pretty}}</h1>
 										<h4 class="text-muted"> {{ 'observations' if stat.nbTotalObs > 1 else 'observation'}}</h4>
 										<p><a id="localScroll" href="#DernieresObservations" class="btn btn-default" role="button">Voir les dernières observations</a></p>
@@ -62,7 +64,7 @@
 								</div>
 								<div class = "col-lg-4 col-md-4 col-sm-6 col-xs-12 stat-object">
 									<div class="stat-thumbnail border">
-										<i class="fas fa-leaf font-icon"></i>									
+										<i class="fa fa-leaf font-icon"></i>									
 										<h1 class="large muted">{{stat.nbTotalTaxons | pretty}}</h1>
 										<h4 class="text-muted"> {{ 'espèces' if stat.nbTotalTaxons > 1 else 'espèce' }}</h4>
 										<form method="POST" id="searchFormTaxonsStat" class="navbar-form" role="search">
@@ -76,7 +78,7 @@
 								</div>
 								<div class ="col-lg-4 col-md-4 col-sm-6 col-xs-12 stat-object">
 									<div class="stat-thumbnail border">
-										<i class="fas fa-map-signs font-icon blue"></i>
+										<i class="fa fa-map-signs font-icon blue"></i>
 										<h1 class="large muted">{{stat.town | pretty}}</h1>
 										<h4 class="text-muted"> {{ 'communes' if stat.town > 1 else 'commune' }}</h4>
 										<form method="POST" onsubmit="completeAction('#searchFormCommunesStat', hiddenInputCommunesStat)" id='searchFormCommunesStat' action=""  class="navbar-form" role="search">
@@ -162,7 +164,7 @@
 			<div id="DernieresObservations">
 					<div class="panel panel-default" >
 					  	<div class="panel-heading padding-sm ">
-							  <h3 class="title-spaced"> <i class="fas fa-binoculars icon-color-title"></i> 
+							  <h3 class="title-spaced"> <i class="fa fa-binoculars icon-color-title"></i> 
 								{{configuration.TEXT_LAST_OBS}} {{observations | length}} {{ 'observations' if observations | length > 1 else 'observation' }}
 							</h3>
 						</div>
