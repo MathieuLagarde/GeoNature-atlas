@@ -13,8 +13,9 @@ $(document).ready(function() {
     // ,"deferRender":true
     // ,"scroller": false
     lengthChange: true,
-    pageLength: 50,
+    pageLength: 10,
     oLanguage: {
+      sLengthMenu: "Afficher _MENU_ taxons",
       sSearch: "",
       sInfo: "",
       sInfoEmpty: "",

@@ -21,6 +21,7 @@ function generateMap() {
     fullscreenControl: true
   });
 
+
   // Style of territory on map
   territoryStyle = {
     fill: false,
@@ -30,6 +31,10 @@ function generateMap() {
 
   // Add limits of the territory to the map
   $(document).ready(function() {
+
+    // ajouter par oeb
+    map.attributionControl.setPrefix('<a  target="_blank" href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+
     $.getJSON(url_limit_territory, function(json) {
       L.geoJson(json, {
         style: territoryStyle
@@ -493,7 +498,7 @@ function printEspece(tabEspece, tabCdRef) {
   i = 0;
   while (i < tabEspece.length) {
     stringEspece +=
-      "<li> <a href='../espece/" + tabCdRef[i] + "'>" + tabEspece[i] + "</li>";
+      "<li> <a href='/accueil/espece/" + tabCdRef[i] + "'>" + tabEspece[i] + "</li>";
 
     i = i + 1;
   }

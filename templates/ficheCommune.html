@@ -2,16 +2,23 @@
 <html>
    <head>
         <meta charset="utf-8" />
-        <title>Commune de {{referenciel.communeName}} | {{configuration.NOM_APPLICATION}} - {{configuration.STRUCTURE}}</title>
+        <title>Commune de {{referenciel.communeName}} | {{configuration.NOM_APPLICATION}}</title>
+
 
         <!-- Jquery -->
+	 <script type="text/javascript" src="{{url_for('static', filename='lib/jquery.lazy/jquery.lazy.min.js') }}"></script>
         <script type="text/javascript" src="{{url_for('static', filename='lib/jquery-1.12.4.min.js') }}"></script>
         <script type="text/javascript" src="{{url_for('static', filename='lib/jquery-ui.min.js') }}"></script>
-        <script type="text/javascript" src="{{url_for('static', filename='lib/jquery.lazy/jquery.lazy.min.js') }}"></script>
+       
         <link rel="stylesheet" href="{{url_for('static', filename='lib/jquery-ui.css') }}" />
 
+
+        <!-- DataTable -->
+      <link rel="stylesheet" href="{{url_for('static', filename='lib/datatables/datatables.min.css') }}"/>
+      
+
         <!-- Leaflet -->
-        <link rel="stylesheet" href="{{url_for('static', filename='lib/leaflet/leaflet.css') }}" />
+        <link rel="stylesheet" href="{{url_for('static', filename='lib/leaflet/leaflet.css') }}" /> 
         <script src="{{url_for('static', filename='lib/leaflet/leaflet.js') }}"></script>
         <script src="{{url_for('static', filename='lib/leaflet/leaflet-fullscreen/leafletFullScreen.min.js') }}"></script>
         <link rel="stylesheet" href="{{url_for('static', filename='lib/leaflet/leaflet-fullscreen/leafletFullScreen.css') }}" />
@@ -19,9 +26,6 @@
         <link rel="stylesheet" href="{{url_for('static', filename='lib/leaflet/leafletMarkerCluster.css') }}" />
 		    <link rel="stylesheet" href="{{url_for('static', filename='lib/leaflet/leafletMarkerCluster.Default.css') }}" />
 
-        <!-- DataTable -->
-		    <link rel="stylesheet" href="{{url_for('static', filename='lib/datatables/datatables.min.css') }}"/>
-        <script type="text/javascript" src="{{url_for('static', filename='lib/datatables/datatables.min.js') }}"></script>
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}"></link>
@@ -38,6 +42,9 @@
         <!--OEB-->
         <!--script src="{{url_for('static', filename='lib/node_modules/@fortawesome/fontawesome-free/js/all.min.js') }}"></script-->
         <link rel="stylesheet" href="{{url_for('static', filename='lib/font-awesome-4.7.0/css/font-awesome.min.css') }}" />
+
+
+  	
 
 
    </head>
@@ -72,7 +79,7 @@
 				<div  class="panel panel-default" id="mapContainer">
 					<div class="row ">
 						<img id ="loadingGif" src="">
-						<div class="panel-heading"><strong>
+						<div class="panel-heading panel-heading-oeb"><strong>
 							 <h4 id="titleMap"> {{configuration.NB_LAST_OBS}} dernières observations sur la commune de <i>{{referenciel.communeName}}</i></h4> </strong>
 						</div>
 						<div class="panel-body">
@@ -88,6 +95,7 @@
             {% include 'static/custom/templates/footer.html' %}
         {% endif %}
 
+
         <script type="text/javascript">
             var configuration = {{configuration|tojson}};
             var observations = {{observations|tojson}};
@@ -99,12 +107,18 @@
             {% if configuration.PROTECTION %} nbColumn = nbColumn+1;{% endif %}
             var noSordedColumns=[nbColumn-2,nbColumn-1]; //var for dataTables js lib
             var defaultSortedColumn=nbColumn-4; //var for dataTables js lib
+
+
         </script>
+ <script type="text/javascript" src="{{url_for('static', filename='lib/jquery.lazy/jquery.lazy.min.js') }}"></script>
+  <script type="text/javascript"  src="{{url_for('static', filename='lib/datatables/datatables.min.js') }}"></script>
 	  	<script src="{{url_for('static', filename='custom/maps-custom.js') }}"></script>
-        <script src="{{url_for('static', filename='listeEspeces.js') }}"></script>
+     		
 		<script src="{{url_for('static', filename='mapGenerator.js') }}"></script>
         <script src="{{url_for('static', filename='mapCommune.js') }}"></script>
         <script src="{{url_for('static', filename='main.js') }}"></script>
+<script src="{{url_for('static', filename='listeEspeces.js') }}" ></script>
+ 	
 
    </body>
 </html>

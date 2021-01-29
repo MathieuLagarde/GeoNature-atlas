@@ -107,7 +107,8 @@ a {
 }
 
 .modal {
-  top: 40px;
+  top: 100px;
+  /*top: 40px;*/
 }
 
 /* Navbar */
@@ -539,3 +540,9 @@ i.fa-icon{
   left: 50%;
   margin-left: -250px;
 }
+
+
+
+
+
+

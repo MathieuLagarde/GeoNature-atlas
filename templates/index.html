@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>{{configuration.NOM_APPLICATION}} - {{configuration.STRUCTURE}}</title>
+        <title>{{configuration.NOM_APPLICATION}}</title>
 
         <!-- Jquery -->
         <script type=text/javascript src="{{url_for('static', filename='lib/jquery-1.12.4.min.js') }}"></script>
@@ -58,7 +58,7 @@
 									<div class="stat-thumbnail border">
 										<i class="fa fa-search font-icon blue"></i>	<input id="hiddenInputTaxonStat" type="hidden" name="cd_ref">
 											<h1 class="large muted">{{stat.nbTotalObs | pretty}}</h1>
-										<h4 class="text-muted"> {{ 'observations' if stat.nbTotalObs > 1 else 'observation'}}</h4>
+										<h4 class="text-muted text-muted-local"> {{ 'observations' if stat.nbTotalObs > 1 else 'observation'}}</h4>
 										<p><a id="localScroll" href="#DernieresObservations" class="btn btn-default" role="button">Voir les dernières observations</a></p>
 									</div>
 								</div>
@@ -66,7 +66,7 @@
 									<div class="stat-thumbnail border">
 										<i class="fa fa-leaf font-icon"></i>									
 										<h1 class="large muted">{{stat.nbTotalTaxons | pretty}}</h1>
-										<h4 class="text-muted"> {{ 'espèces' if stat.nbTotalTaxons > 1 else 'espèce' }}</h4>
+										<h4 class="text-muted text-muted-local"> {{ 'espèces' if stat.nbTotalTaxons > 1 else 'espèce' }}</h4>
 										<form method="POST" id="searchFormTaxonsStat" class="navbar-form" role="search">
 											<div class="form-group has-feedback">
 												<input id="searchTaxonsStat" type="text" class="form-control" placeholder="Rechercher une espèce &nbsp; &nbsp; &nbsp;" loading="false" />
@@ -80,7 +80,7 @@
 									<div class="stat-thumbnail border">
 										<i class="fa fa-map-signs font-icon blue"></i>
 										<h1 class="large muted">{{stat.town | pretty}}</h1>
-										<h4 class="text-muted"> {{ 'communes' if stat.town > 1 else 'commune' }}</h4>
+										<h4 class="text-muted text-muted-local"> {{ 'communes' if stat.town > 1 else 'commune' }}</h4>
 										<form method="POST" onsubmit="completeAction('#searchFormCommunesStat', hiddenInputCommunesStat)" id='searchFormCommunesStat' action=""  class="navbar-form" role="search">
 											<div class="form-group has-feedback">
 												<input id="searchCommunesStat" type="text" class="form-control" placeholder="Rechercher une commune" />
